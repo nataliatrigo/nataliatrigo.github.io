@@ -1,0 +1,7 @@
+# LaTeX auxiliary/build files (CV compiles main.tex -> main.pdf, which we do keep)
+CV/*.aux
+CV/*.log
+CV/*.out
+CV/*.fls
+CV/*.fdb_latexmk
+CV/*.synctex.gz

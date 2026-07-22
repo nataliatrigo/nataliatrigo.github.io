@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natalia Trigo — Operations &amp; Technology Management</title>
+<meta name="description" content="Personal page of Natalia Trigo, PhD student in Operations and Technology Management at UCLA Anderson School of Management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16202e;
+    --paper:#f6f7f8;
+    --card:#ffffff;
+    --accent:#1f5f8b;
+    --accent-deep:#14425f;
+    --line:#dde1e6;
+    --muted:#5c6672;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.68;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:var(--accent-deep);text-decoration:underline;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;letter-spacing:0.09em;text-transform:lowercase;
+    color:var(--accent);display:inline-block;margin-bottom:10px;
+  }
+
+  /* ---- top nav ---- */
+  nav{
+    position:sticky;top:0;z-index:20;
+    background:rgba(246,247,248,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .nav-name{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;color:var(--ink);}
+  .nav-links{display:flex;gap:20px;align-items:center;}
+  .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);}
+  .nav-links a:hover{color:var(--accent);text-decoration:none;}
+  .nav-cv{border:1px solid var(--accent);color:var(--accent);padding:6px 13px;border-radius:2px;transition:background .18s,color .18s;}
+  .nav-cv:hover{background:var(--accent);color:#fff;text-decoration:none;}
+  @media(max-width:640px){.nav-links a:not(.nav-cv){display:none;}}
+
+  main{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:52px 0;border-top:1px solid var(--line);}
+  section:first-of-type{border-top:none;}
+
+  /* ---- hero ---- */
+  #home{padding-top:64px;padding-bottom:56px;}
+  .hero-wrap{display:flex;gap:40px;align-items:flex-start;}
+  .hero-text{flex:1;min-width:0;}
+  .hero-photo{
+    flex:0 0 auto;width:190px;height:228px;object-fit:cover;
+    border-radius:6px;background:#e6e9ec;border:1px solid var(--line);
+    box-shadow:0 8px 26px rgba(22,32,46,0.08);
+  }
+  @media(max-width:640px){
+    .hero-wrap{flex-direction:column-reverse;align-items:flex-start;gap:24px;}
+    .hero-photo{width:150px;height:180px;}
+  }
+  h1{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(38px,6.5vw,58px);line-height:1.03;
+    letter-spacing:-0.015em;
+  }
+  .hero-lede{font-size:clamp(16px,1.8vw,18px);color:var(--muted);max-width:60ch;margin:18px 0 24px;}
+  .hero-affil{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);margin-bottom:24px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:13px;padding:9px 16px;border-radius:2px;transition:all .18s;}
+  .btn:hover{text-decoration:none;}
+  .btn-solid{background:var(--accent);color:#fff;}
+  .btn-solid:hover{background:var(--accent-deep);color:#fff;}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+  /* ---- headings & prose ---- */
+  h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3.2vw,30px);letter-spacing:-0.01em;margin-bottom:22px;}
+  .prose p{margin-bottom:14px;max-width:66ch;}
+  .prose p:last-child{margin-bottom:0;}
+  strong{font-weight:600;}
+
+  /* ---- publications ---- */
+  .pub{
+    background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 22px;margin-bottom:14px;transition:border-color .18s;
+  }
+  .pub:hover{border-color:var(--accent);}
+  .pub.award{border-left:2px solid var(--accent);}
+  .pub-title{font-weight:600;font-size:18px;line-height:1.4;margin-bottom:5px;}
+  .pub-authors{color:var(--muted);font-size:15px;}
+  .pub-authors .me{color:var(--ink);font-weight:600;}
+  .pub-venue{color:var(--muted);font-size:15px;font-style:italic;margin-top:2px;}
+  .pub-links{font-family:'IBM Plex Mono',monospace;font-size:13px;margin-top:8px;}
+  .pub-notes{list-style:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
+  .pub-notes li{font-size:14px;color:var(--muted);padding-left:15px;text-indent:-15px;margin-bottom:4px;}
+  .pub-notes li::before{content:"— ";color:var(--accent);}
+  .pub-notes li.win{color:var(--ink);}
+  .pub-notes li.win::before{content:"★ ";}
+
+  /* ---- entry rows (teaching, talks) ---- */
+  .entry{display:flex;gap:22px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline;}
+  .entry:first-of-type{border-top:1px solid var(--line);}
+  .entry-date{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);flex:0 0 90px;}
+  .entry-body{flex:1;}
+  .entry-title{font-weight:500;}
+  .entry-sub{color:var(--muted);font-size:15px;}
+  @media(max-width:520px){.entry{flex-direction:column;gap:3px;}.entry-date{flex-basis:auto;}}
+
+  /* ---- contact ---- */
+  .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+  .links a{font-family:'IBM Plex Mono',monospace;font-size:13px;border:1px solid var(--line);border-radius:2px;padding:9px 15px;color:var(--ink);transition:all .18s;}
+  .links a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;}
+
+  footer{max-width:var(--maxw);margin:0 auto;padding:32px 24px 56px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Natalia Trigo Tomasevich</span>
+    <div class="nav-links">
+      <a href="#research">research</a>
+      <a href="#teaching">teaching</a>
+      <a href="#talks">talks</a>
+      <a href="#contact">contact</a>
+      <a class="nav-cv" href="CV/main.pdf">CV &darr;</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-wrap">
+      <div class="hero-text">
+        <span class="eyebrow">PhD Student &middot; Operations & Technology Management</span>
+        <h1>Natalia Trigo Tomasevich</h1>
+        <p class="hero-lede">My name is Natalia, and I am a second-year Ph.D. student in Operations and Technology Management at the UCLA Anderson School of Management. I am originally from Rancagua, Chile, and I hold a degree in Industrial Engineering and a Master&rsquo;s degree in Operations Management, both from the University of Chile. My research interests include stochastic processes, multi-armed bandits, and operations research, with applications in artificial intelligence and healthcare.</p>
+        <p class="hero-affil">UCLA Anderson School of Management</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="mailto:nataliatt@ucla.edu">Email me</a>
+          <a class="btn btn-ghost" href="CV/main.pdf">Download CV</a>
+        </div>
+      </div>
+      <img class="hero-photo" src="photo.jpeg" alt="Portrait of Natalia Trigo">
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <span class="eyebrow">research</span>
+    <h2>Publications</h2>
+
+    <div class="pub award">
+      <div class="pub-title">Effectiveness and impact of nirsevimab in Chile during the first season of a national immunisation strategy against RSV (NIRSE-CL): a retrospective observational study</div>
+      <div class="pub-authors">J.&nbsp;P. Torres, D. Sauré, M. Goic, C. Thraves, J. Pacheco, J. Burgos, <span class="me">Natalia Trigo</span>, F. Del Solar, I. Neira, G. Díaz, M. O&rsquo;Ryan, and L.&nbsp;J. Basso</div>
+      <div class="pub-venue">The Lancet Infectious Diseases, 25, 1189–1198 (2025)</div>
+      <div class="pub-links"><a href="https://doi.org/10.1016/S1473-3099(25)00233-6" target="_blank" rel="noopener">Paper</a></div>
+      <ul class="pub-notes">
+        <li class="win"><strong>Winner</strong>, IFORS Prize for OR in Development — 1st place, IFORS Conference, Vienna, Austria</li>
+      </ul>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Optimal sequential stochastic shortest path interdiction</div>
+      <div class="pub-authors">J.&nbsp;S. Borrero, D. Sauré, and <span class="me">Natalia Trigo</span></div>
+      <div class="pub-venue">European Journal of Operational Research, 326, 641–655 (2025)</div>
+      <div class="pub-links"><a href="https://doi.org/10.1016/j.ejor.2025.04.009" target="_blank" rel="noopener">Paper</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Cost-savings and health impact of strategies for prevention of Respiratory Syncytial Virus with nirsevimab in Chile based on the integrated analysis of 2019–2023 national databases: a retrospective study</div>
+      <div class="pub-authors">D. Sauré, M. O&rsquo;Ryan, J.&nbsp;P. Torres, <span class="me">Natalia Trigo</span>, G. Diaz, M. Goic, C. Thraves, J. Pacheco, P. Aguilera, A. Caro, and L.&nbsp;J. Basso</div>
+      <div class="pub-venue">Journal of Infection and Public Health, 18, 102680 (2025)</div>
+      <div class="pub-links"><a href="https://doi.org/10.1016/j.jiph.2025.102680" target="_blank" rel="noopener">Paper</a></div>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <span class="eyebrow">teaching</span>
+    <h2>Teaching</h2>
+    <div class="entry">
+      <span class="entry-date">Spring 2026</span>
+      <div class="entry-body">
+        <div class="entry-title">Global Supply Chain Management — Teaching Assistant</div>
+        <div class="entry-sub">UCLA Anderson School of Management</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">Fall 2025</span>
+      <div class="entry-body">
+        <div class="entry-title">Health Care Analytics — Teaching Assistant</div>
+        <div class="entry-sub">UCLA Anderson School of Management</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">Fall 2025</span>
+      <div class="entry-body">
+        <div class="entry-title">Business Analytics Supervised Project — Teaching Assistant</div>
+        <div class="entry-sub">UCLA Anderson School of Management</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">Spring 2023</span>
+      <div class="entry-body">
+        <div class="entry-title">Modeling &amp; Optimization (undergraduate) — Lecturer</div>
+        <div class="entry-sub">University of Chile</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">2022–2024</span>
+      <div class="entry-body">
+        <div class="entry-title">Stochastic Processes (graduate level) — Teaching Assistant</div>
+        <div class="entry-sub">University of Chile</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">Fall 2024</span>
+      <div class="entry-body">
+        <div class="entry-title">Probabilities (undergraduate) — Lecturer</div>
+        <div class="entry-sub">University of Chile</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">Fall 2023</span>
+      <div class="entry-body">
+        <div class="entry-title">Probabilities (undergraduate) — Lecturer</div>
+        <div class="entry-sub">University of Chile</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">Spring 2022</span>
+      <div class="entry-body">
+        <div class="entry-title">Probabilities — Teaching Assistant</div>
+        <div class="entry-sub">University of Chile</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">2019–2022</span>
+      <div class="entry-body">
+        <div class="entry-title">Introduction to Operations Research — Teaching Assistant</div>
+        <div class="entry-sub">University of Chile</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">2017–2018</span>
+      <div class="entry-body">
+        <div class="entry-title">Differential Equations — Teaching Assistant</div>
+        <div class="entry-sub">University of Chile</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TALKS -->
+  <section id="talks">
+    <span class="eyebrow">talks</span>
+    <h2>Presentations</h2>
+    <div class="entry">
+      <span class="entry-date">2024</span>
+      <div class="entry-body">
+        <div class="entry-title">International Workshop on Bilevel Optimization (IWOBIP&rsquo;24)</div>
+        <div class="entry-sub">Speaker — &ldquo;Stochastic Shortest Path Interdiction Problem&rdquo;</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">2023</span>
+      <div class="entry-body">
+        <div class="entry-title">International Federation of Operational Research Societies (IFORS)</div>
+        <div class="entry-sub">Speaker — &ldquo;Stochastic Shortest Path Interdiction Problem&rdquo;</div>
+      </div>
+    </div>
+    <div class="entry">
+      <span class="entry-date">2022</span>
+      <div class="entry-body">
+        <div class="entry-title">Latin American Conference in Operations Research (CLAIO)</div>
+        <div class="entry-sub">Speaker — &ldquo;Stochastic Shortest Path Interdiction Problem&rdquo;</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <span class="eyebrow">contact</span>
+    <p class="prose">The best way to reach me is by email.</p>
+    <div class="links">
+      <a href="mailto:nataliatt@ucla.edu">nataliatt@ucla.edu</a>
+      <a href="https://www.linkedin.com/in/natalia-trigo-tomasevich/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="CV/main.pdf">CV (PDF)</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Natalia Trigo · Operations &amp; Technology Management · Last updated: July 2026
+</footer>
+
+</body>
+</html>
